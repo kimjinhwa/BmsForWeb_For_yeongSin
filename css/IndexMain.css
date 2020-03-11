@@ -1,0 +1,335 @@
+html {
+	background-color: #DDD;
+}
+
+body {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+	width: 1100px;
+
+	margin: 0 auto;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	-webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, .5);
+	-moz-box-shadow: 0 0 10px 2px rgba(0, 0, 0, .5);
+	box-shadow: 0 0 10px 2px rgba(0, 0, 0, .5);
+	padding: 7px 25px 70px;
+	background-color: #FFF;
+}
+
+#head {
+	border-bottom: 3px double black;
+	//border: 1px black solid;
+	text-align:center;
+}
+
+#menu  {
+	//border: 1px blue solid;
+	float: left;
+	//width: 20%	
+
+	position: absolute;
+	width: 150px;
+	height: 800px;
+	//left: 20px;
+	margin: 5px;	
+
+}
+
+#menu_upsSetting
+{
+	//border: 1px blue solid;
+	float: left;
+	//width: 20%	
+
+	position: absolute;
+	width: 200px;
+	height: 150px;
+	//left: 20px;
+	margin: 5px;	
+
+}
+#setUPSLINK{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
+#menu li{
+	list-style-type:none;
+	text-align:left;
+	margin-left:-2.5em;
+	margin-bottom:2px;
+
+	width:9em;
+
+	display:block;
+	background-color:#dbfff4;
+	box-shadow:5px 5px 5px gray;
+
+}
+.mybutton{
+
+	background-color:#dbfff4;
+	box-shadow:5px 5px 5px gray;
+	font-size:18px;
+	min-width: 150px;
+	margin:3px;
+	//max-width: 45px;
+
+	//margin-left:-2.5em;
+	//margin-bottom:2px;
+
+}
+.mybutton1{
+
+	background-color:#dbfff4;
+	box-shadow:5px 5px 5px gray;
+	font-size:18px;
+	min-width: 120px;
+	margin:3px;
+	//max-width: 45px;
+
+	//margin-left:-2.5em;
+	//margin-bottom:2px;
+
+}
+
+#menu li ul {
+	display:none;
+}
+
+
+#menu li:hover ul{
+	display:block;
+	background-color:#DDDDEE;
+	box-shadow:3px 3px 3px gray;
+	margin-bottom:2px;
+}
+
+
+#menu li ul li {
+	text-decoration:none;
+	text-align:right;
+	color:black;
+	display:block;
+	background-color:#dbfff4;
+	box-shadow:5px 5px 5px gray;
+
+}
+
+#seoulMetroLogoImg
+{
+	float:left;	
+}
+#iftechLogoImg
+{
+	float:left;	
+	width:10%;
+	hight:10%;
+}
+
+#company_info_name
+{
+	//float:left;
+}
+#company_info_webaddress
+{
+	float:right;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Georgia, "Times New Roman", serif;
+}
+
+h2, form {
+	text-align: center;
+}
+
+/*
+form {
+	margin-top: 5px;
+}
+
+section {
+	margin-top: 40px;
+}
+
+
+*/
+.loginputTextArea {
+	width: 800px;
+	height: 180px;
+	margin: 0 auto;
+	display: block;
+}
+
+#imageDiv  {
+	display:none;
+	border: 1px black solid;
+	float: left;
+	//width: 75%
+	position: absolute;
+	width: 800px;
+	height: 200px;
+	left: 200px;
+	top: 0px;
+	margin: 5px;	
+}
+
+#imageDiv1  {
+	display:show;
+	border: 1px black solid;
+	float: left;
+	//width: 75%
+	position: absolute;
+	width: 800px;
+	height: 200px;
+	left: 200px;
+	top: 0px;
+	margin: 5px;	
+
+}
+
+.stationImg{
+	
+	width: 40px;
+	height:40px ;
+	margin-top:25px
+	
+}
+.station_name
+{
+	//width: 80px;
+	float:left;
+	height:80px ;
+	min-width: 45px;
+	max-width: 45px;
+	text-align: center;
+	//border: 1px black solid;
+	
+}
+#ups_canvas{
+	display:show;
+	width: 800px;
+	height:350px ;
+	style="width : 400px; 
+	height : 350px";
+	//<canvas id="myCanvas" width="1080" height="1920" style="width : 300px; height : 300px"></canvas>	
+}
+#content  {
+	display:show;
+	border: 1px black solid;
+	float: left;
+	//width: 75%
+	position: absolute;
+	width: 800px;
+	height: 420px;
+	//left: 200px;
+	top: 0px;
+	margin: 5px;	
+}
+/*
+#content_ups_info_label
+{
+	background-color: #CCCCFF;
+	width: 50%;
+	float: left;
+}
+*/
+#content_left{
+	//border: 3px red solid;
+	float:left;
+	width:48%;
+	margin:1px;
+}
+#content_right{
+	//border: 3px red solid;
+	left-margin:52%;
+	width:48%;
+	float:left;
+	margin:1px;
+}
+
+#ups_info_div{
+	//border: 3px red solid;
+	//clear:left;
+	//float: left;
+	//position: absolute;
+	//width:40%;
+	//top: 150px;
+	//background-color: #CCCCFF;
+	//left: 100px;
+}
+#ups_inverter_label_title
+{
+	
+	background-color: #c6cdff;
+	float: left;
+	width:100%;
+	//font: italic 110% arial, sans-serif;
+	//left: 100px;
+	//clear:left;
+	//float:left;
+	//width:150px;
+	//margin:2px;
+}
+.ups_inverter_label
+{
+	//border: 1px blue solid;
+	float:left;
+	//clear:left;
+	background-color: #f0f8ff;
+	width:51%;
+	//width:200px;
+	margin:1px;
+}
+
+.ups_inverter_value
+{
+	//background-color: #fefcdc;
+	//border: 1px blue solid;
+	float:left;
+	background-color: #f0f8ff;
+	width:48%;
+	text-align: center;
+	//width:200px;
+	//margin:2px;
+}
+
+#message_status_div{
+	border: 1px blue solid;
+	background-color: #00ff00;
+	float:left;
+	width:100%;
+	//clear:left;
+}
+#message_status_span{
+	
+	width:100%;
+
+	}
+#copntent_log  {
+	border: 1px blue solid;
+	float: left;
+	width: 80%
+	//clear: left
+	//left: 0px;
+	//margin: 20px;
+	//position: absolute;
+	//width: 150px;
+	//height: 600px;
+	//left: 0px;
+	//top: 80px;
+	margin: 5px;	
+	//width: 70%
+
+}
+
+#footer{
+	border-top: 3px double gray;
+	clear:both;
+	text-align: center;
+}
+
+.hidden{
+	display:none;
+}

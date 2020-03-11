@@ -1,0 +1,21 @@
+<?xml version="1.0"  encoding="EUC-KR"?>
+<seoul_subway>
+   <station id="ST501">
+      <station_name>방화역</station_name>
+      <e_mail_server>mail.gmail.com</e_mail_server>
+      <receiver_email>
+      		<receiver_email_01>anyone@anyone</receiver_email_01>
+      		<receiver_email_02>anyone@anyone</receiver_email_02>
+      		<receiver_email_03>anyone@anyone</receiver_email_03>
+      		<receiver_email_04>anyone@anyone</receiver_email_04>
+      		<receiver_email_05>anyone@anyone</receiver_email_05>
+      		<receiver_email_06>anyone@anyone</receiver_email_06>
+      		<receiver_email_07>anyone@anyone</receiver_email_07>
+      		<receiver_email_08>anyone@anyone</receiver_email_08>
+      		<receiver_email_09>anyone@anyone</receiver_email_09>
+      		<receiver_email_10>anyone@anyone</receiver_email_10>
+      </receiver_email>
+   </station>
+</seoul_subway>
+
+

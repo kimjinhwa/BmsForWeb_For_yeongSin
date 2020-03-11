@@ -1,0 +1,4 @@
+SeoulMetroVwe1.2
+
+1. local.clear를 추가하여 메모리 문제를 해결하였다.
+2. 이벤트를 간략하게 표시하고 DATE 를 PC것으로 사용하게 했다.

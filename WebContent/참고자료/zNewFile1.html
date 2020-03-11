@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script>
+$(document).ready(function(){
+        // menu 클래스 바로 하위에 있는 a 태그를 클릭했을때
+        $(".menu>a").click(function(){
+            var submenu = $(this).next("ul");
+ 
+            // submenu 가 화면상에 보일때는 위로 보드랍게 접고 아니면 아래로 보드랍게 펼치기
+            if( submenu.is(":visible") ){
+                submenu.slideUp();
+            }else{
+                submenu.slideDown();
+            }
+        });
+         //$(".menu:eq(0)>a").click();
+    });
+</script>
+
+<style>
+    .menu a{cursor:pointer;}
+    .menu .hide{display:none;}
+* { margin:0; padding:0; }
+    li { list-style:none; }
+    a { text-decoration:none; }
+    img { border:none; }
+    header { text-align:center; position:fixed; top:0; left:0; background:#fff; width:100%; padding:20px 0; }
+    header h1 { color:#006; }
+    nav { border-top:1px solid #ccc; border-bottom:3px solid #ccc; height:40px; overflow:hidden; position:fixed; width:100%; background:rgba(255,255,255,0.8);  }
+    nav  > div { border-bottom:1px solid #ccc; height:40px; }
+    nav #gnb { width:960px; margin:0 auto; }
+    nav #gnb:after { content:""; clear:both; display:block; height:0; visibility:hidden; }
+    nav #gnb > li { float:left; text-align:center; width:137px;  }
+    nav #gnb > li:last-child { margin-right:0; }
+    /* nav #gnb > li a { display:block; height:40px; line-height:40px;  } */
+    nav #gnb > li > a:link, nav #gnb > li > a:visited { color:#333; font-weight:bold; font-size:18px; }
+    nav #gnb > li > a:hover, nav #gnb > li > a:active, nav #gnb > li > a:focus, nav #gnb > li > a.select { background:#069; color:#fff; }
+    nav #gnb ul li a:link, nav #gnb ul li a:visited { color:#666; } 
+    nav #gnb ul li a:hover, nav #gnb ul li a:active, nav #gnb ul li a:focus { background:#eee; }
+</style>
+
+
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+
+<body>
+<nav>
+<div>
+    <ul id=gnb>
+        <li class="menu">
+            <a href="#cont1">MENU1</a>
+            <ul class="hide">
+                <li><a href=#>메뉴1-1</a></li>
+                <li><a href=#>메뉴1-2</a></li>
+                <li><a href=#>메뉴1-3</a></li>
+            </ul>
+        </li>
+ 
+        <li class="menu">
+            <a href="#cont1">MENU2</a>
+            <ul class="hide">
+                <li><a href=#>메뉴2-1</a></li>
+                <li><a href=#>메뉴2-2</a></li>
+                <li><a href=#>메뉴2-3</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</nav>
+
+
+
+</body>
+</html>

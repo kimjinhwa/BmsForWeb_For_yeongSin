@@ -1,0 +1,408 @@
+﻿<!DOCTYPE HTML>
+<html>
+   <head>
+   <meta charset="utf-8"/>
+   <script src="../JavaScript/grobalVar.js"></script>
+   <script src="../JavaScript/jquery-1.8.2.js"></script>  
+	<script src="../JavaScript/metroXml.js"></script>
+	<script src="../JavaScript/json2.js"></script>
+	<script src="../JavaScript/smtp.js"></script>
+   
+
+	
+	<link rel="stylesheet" type="text/css" href="../css/IndexMain.css"/>
+   </head>
+   <body id="MainBody" onLoad='onBodyLoadEvent()'>
+   <img class="hidden" id="upsDiagramImgID" src="../img/UPS_FLOW_DIAGRAM.png" />
+   <div id="all">
+   
+		<div id ="head">
+		<img id="seoulMetroLogoImg" src="../img/seoulmetrologo.png" />
+		
+		<h1 id="main_title">서울교통공사 UPS관리시스템</h1>
+		</div>
+		<div id ="menu">
+		     <P>Main Menu </P>
+				<ul>
+				<li> 개화산기술사업소(501~513)
+					<ul>
+						<li onClick="selectStation('ST501')">방화기지</li>
+						<li onClick="selectStation('ST502')">방화</li>
+						<li onClick="selectStation('ST503')">개화산</li>
+						<li onClick="selectStation('ST504')">김포공항</li>
+						<li onClick="selectStation('ST505')">송정</li>
+						<li onClick="selectStation('ST506')">마곡</li>
+						<li onClick="selectStation('ST507')">발산</li>
+						<li onClick="selectStation('ST508')">우장산</li>
+						<li onClick="selectStation('ST509')">화곡</li>
+						<li onClick="selectStation('ST510')">까치산</li>
+						<li onClick="selectStation('ST511')">신정</li>
+						<li onClick="selectStation('ST512')">목동</li>
+						<li onClick="selectStation('ST513')">오목교</li>
+					</ul>
+				</li>
+				<li> 영등포기술사업소(514~527)
+					<ul>
+						<li onClick="selectStation('ST514')">양평</li>
+						<li onClick="selectStation('ST515')">영등포구청</li>
+						<li onClick="selectStation('ST516')">영등포시장</li>
+						<li onClick="selectStation('ST517')">신길</li>
+						<li onClick="selectStation('ST518')">여의도</li>
+						<li onClick="selectStation('ST519')">여의나루</li>
+						<li onClick="selectStation('ST520')">마포</li>
+						<li onClick="selectStation('ST521')">공덕</li>
+						<li onClick="selectStation('ST522')">애오개</li>
+						<li onClick="selectStation('ST523')">충정로</li>
+						<li onClick="selectStation('ST524')">서대문</li>
+						<li onClick="selectStation('ST525')">광화문</li>
+						<li onClick="selectStation('ST526')">종로3가</li>
+						<li onClick="selectStation('ST527')">을지로4가</li>
+					</ul>
+				</li>	
+				<li> 답십리기술사업소(528~539)
+					<ul>
+						<li onClick="selectStation('ST528')">동대문역사문화공원</li>
+						<li onClick="selectStation('ST529')">청구</li>
+						<li onClick="selectStation('ST530')">신금호</li>
+						<li onClick="selectStation('ST531')">행당</li>
+						<li onClick="selectStation('ST532')">왕십리</li>
+						<li onClick="selectStation('ST533')">마장</li>
+						<li onClick="selectStation('ST534')">답십리</li>
+						<li onClick="selectStation('ST535')">장한평</li>
+						<li onClick="selectStation('ST536')">군자</li>
+						<li onClick="selectStation('ST537')">아차산</li>
+						<li onClick="selectStation('ST538')">광나루</li>
+						<li onClick="selectStation('ST539')">천호</li>
+					</ul>
+				</li>	
+				<li> 고덕기술사업소(540~553)
+					<ul>
+						<li onClick="selectStation('ST540')">강동</li>
+						<li onClick="selectStation('ST541')">둔촌</li>
+						<li onClick="selectStation('ST542')">올림픽공원</li>
+						<li onClick="selectStation('ST543')">방이</li>
+						<li onClick="selectStation('ST544')">오금</li>
+						<li onClick="selectStation('ST545')">개롱</li>
+						<li onClick="selectStation('ST546')">거여</li>
+						<li onClick="selectStation('ST547')">마천</li>
+						<li onClick="selectStation('ST548')">길동</li>
+						<li onClick="selectStation('ST549')">굽은다리</li>
+						<li onClick="selectStation('ST550')">명일</li>
+						<li onClick="selectStation('ST551')">고덕</li>
+						<li onClick="selectStation('ST552')">상일동</li>
+						<li onClick="selectStation('ST553')">고덕기지</li>
+					</ul>
+				</li>
+				<li>신내(601~602)
+					<ul>
+						<li onClick="selectStation('ST601')">석계</li>
+						<li onClick="selectStation('ST602')">신내기지</li>
+					</ul>
+				</li>
+				<li>한강진(603)
+					<ul>
+						<li onClick="selectStation('ST603')">공덕</li>
+					</ul>
+				</li>
+				<li>도봉(701~702)
+					<ul>
+						<li onClick="selectStation('ST701')">도봉기지</li>
+						<li onClick="selectStation('ST702')">노원</li>
+					</ul>
+				</li>
+				<li>건대입구(703~704)
+					<ul>
+						<li onClick="selectStation('ST703')">먹골</li>
+						<li onClick="selectStation('ST704')">용마산</li>
+					</ul>
+				</li>
+				<li>이수(705~706)
+					<ul>
+						<li onClick="selectStation('ST705')">논현</li>
+						<li onClick="selectStation('ST706')">고속터미널</li>
+					</ul>
+				</li>
+				<li>철산(707~709)
+					<ul>
+						<li onClick="selectStation('ST707')">천왕</li>
+						<li onClick="selectStation('ST708')">대림</li>
+						<li onClick="selectStation('ST709')">철산</li>
+					</ul>
+				</li>
+				<li>잠실(801)
+					<ul>
+						<li onClick="selectStation('ST801')">잠실</li>
+					</ul>
+				</li>		
+							
+			</ul>
+			
+			<input  class="mybutton" id="button" type="button" value="UPS 상태보기" onClick="showupsdiagrm(true)"/>
+			<input  class="mybutton" id="button"  type="button" value="역사 상태보기" onClick="showupsdiagrm(false)"/>
+			<input  class="mybutton" id="start_button"  type="button" value="자동검색시작" onClick="autoQuery()"/>
+			<br><br>
+			<div id = "select_group">
+				<form action = "">
+					<fieldset>
+						<input type = "radio" name = "weapon" 	id = "radSpoon"	value = "spoon"	checked = "checked" /> <label for = "radSpoon">501~513</label>
+						<input type = "radio" name = "weapon" id = "radFlower" value = "flower" />
+						<label for = "radFlower">514~527</label>
+						<input type = "radio" name = "weapon" id = "radNoodle" 	value = "wet noodle" />
+						<label for = "radNoodle">527~539</label>
+						<input type = "radio" name = "weapon" id = "radNoodle" 	value = "wet noodle" />
+						<label for = "radNoodle">540~553</label>
+						<input type = "radio" name = "weapon" id = "radNoodle" 	value = "wet noodle" /> <label for = "radNoodle">601~602</label>
+						<input type = "radio" name = "weapon" id = "radNoodle" 	value = "wet noodle" /> <label for = "radNoodle">603~603</label>
+						<input type = "radio" name = "weapon" id = "radNoodle" 	value = "wet noodle" />
+						<label for = "radNoodle">701~702</label>
+						<input type = "radio" name = "weapon" id = "radNoodle" 	value = "wet noodle" />
+						<label for = "radNoodle">703~704</label>
+						<input type = "radio" name = "weapon" id = "radNoodle" 	value = "wet noodle" />
+						<label for = "radNoodle">705~706</label>
+						<input type = "radio" name = "weapon" id = "radNoodle" 	value = "wet noodle" />
+						<label for = "radNoodle">707~709</label>
+						<input type = "radio" name = "weapon" id = "radNoodle" 	value = "wet noodle" />
+						<label for = "radNoodle">801~801</label>
+
+						<button class="mybutton1" type = "button" onclick = "selectRadioBox()"> 선택 </button>
+					</fieldset>
+				</form>			
+			</div>		
+			<!--   <div id="setUPSLINK" ><h3>UPS설정</h3> </div> -->
+		<!--
+		<div id ="menu_upsSetting">
+			<ul>
+				<li>UPS설정  
+					<ul>
+						<li ><a href="./UpsSetup_network.html">네트웍설정</a></li>
+						<!--
+						<li onClick="moveUrl('SET_NETWORK')">네트웍설정</li>
+						<li onClick="moveUrl('SET_SNMP')">snmp설정</li>
+						<li onClick="moveUrl('SET_UPS')">ups설정</li>
+						 -->
+						<!-- 
+						<li onClick="resset()">reset()</li>
+						<li onClick="myfunction12_4()">12_4</li>
+						<li onClick="myfunction13_3()">13_3</li>
+						<li onClick="myfunction15_10()">15_10</li>
+						<li onClick="myfunction12_3()">12_3</li>
+						<li onClick="myfunction14_11()">14_11</li>
+						<li onClick="myfunction12_12()">12_12</li>
+						<li onClick="myfunction12_5()">12_5</li>
+						<li onClick="myfunction12_13()">12_13</li>
+						<li onClick="myfunction12_14()">12_14</li>
+						 -->
+					</ul>
+				</li>						
+			</ul>
+		</div>
+		-->
+			
+		</div>   <!-- 메뉴의 끝 -->
+		<div id="imageDiv">
+			<canvas id="ups_canvas" ></canvas>
+			
+		</div>
+		<div id="imageDiv1">
+			<span id="station_image_span">
+			<span ><img class="stationImg" id="stationImg_ST501" src="../img/trainHead_normal.png"></img> </span>
+			<span ><img  class="stationImg" id="stationImg_ST502" src="../img/trainHead_normal.png"/></span>
+			<span ><img  class="stationImg" id="stationImg_ST502" src="../img/trainHead_normal.png"/></span>
+			<span ><img  class="stationImg" id="stationImg_ST502" src="../img/trainHead_normal.png"/></span>
+			<span ><img  class="stationImg" id="stationImg_ST502" src="../img/trainHead_normal.png"/></span>
+			<span ><img  class="stationImg" id="stationImg_ST502" src="../img/trainHead_normal.png"/></span>
+			<span ><img  class="stationImg" id="stationImg_ST502" src="../img/trainHead_normal.png"/></span>
+			<span ><img  class="stationImg" id="stationImg_ST502" src="../img/trainHead_normal.png"/></span>
+			<span ><img  class="stationImg" id="stationImg_ST502" src="../img/trainHead_normal.png"/></span>
+			<span ><img  class="stationImg" id="stationImg_ST502" src="../img/trainHead_normal.png"/></span>
+			<span ><img  class="stationImg" id="stationImg_ST502" src="../img/trainHead_normal.png"/></span>
+			<span ><img  class="stationImg" id="stationImg_ST502" src="../img/trainHead_normal.png"/></span>
+			<span ><img  class="stationImg" id="stationImg_ST502" src="../img/trainHead_normal.png"/></span>
+			<span ><img  class="stationImg" id="stationImg_ST502" src="../img/trainHead_normal.png"/></span>
+
+			</span>
+			<p  id="station_image_p">
+			<span class="station_name" id="station_01" >방화 </span>
+			<span class="station_name" id="station_02" >방화 </span>
+			<span class="station_name" id="station_02" >방화 </span>
+			<span class="station_name" id="station_02" >방화 </span>
+			<span class="station_name" id="station_02" >방화 </span>
+			<span class="station_name" id="station_02" >방화 </span>
+			<span class="station_name" id="station_02" >방화 </span>
+			<span class="station_name" id="station_02" >방화 </span>
+			<span class="station_name" id="station_02" >방화 </span>
+			<span class="station_name" id="station_02" >방화 </span>
+			<span class="station_name" id="station_02" >방화 </span>
+			<span class="station_name" id="station_02" >방화 </span>
+			<span class="station_name" id="station_02" >방화 </span>
+			<span class="station_name" id="station_02" >방화 </span>
+			</p>
+			
+		</div>
+		
+	    <div id="content">
+	    	
+	    	<div id="content_left">
+		    	<span id="ups_inverter_label_title">UPS 기본 정보</span>
+		    	<span class="ups_inverter_label" id="Year_made_name"> 제조년월일</span>
+		    		<span class="ups_inverter_value" id="Year_made_value">2017/01/01</span>
+		    	<span class="ups_inverter_label" id="Ups_Capacitor_name">용 량</span>
+		    		<span class="ups_inverter_value" id="Ups_Capacitor_value">0KVA</span>
+		    	<span class="ups_inverter_label" id="Input_Phase_name">입 력</span>
+		    		<span class="ups_inverter_value" id="Input_Phase_value">0상</span>	
+		    	<span class="ups_inverter_label" id="Input_Voltage_name">입력전원</span>
+		    		<span class="ups_inverter_value" id="Input_Voltage_value">0V</span>	
+
+			</div>
+	    	
+	    	<div id="content_right">
+		    	<span id="ups_inverter_label_title">UPS 기본정보
+		    	</span>
+		    	<span  class="ups_inverter_label" id="Output_Voltage_name">출력전압</span>
+			    	<span  class="ups_inverter_value" id="Output_Voltage_value">0V</span>
+		    	<span class="ups_inverter_label" id="Output_Phase_name">출력위상 </span>
+		    		<span class="ups_inverter_value" id="Output_Phase_value">0상</span>
+		    	<span class="ups_inverter_label" id="Installed_Battery_Cells_name">축전지셀수</span>
+		    		<span class="ups_inverter_value" id="Installed_Battery_Cells_value">0셀</span>
+		    	<span class="ups_inverter_label" id="selected_station_name ">역사코드</span>
+		    		<span class="ups_inverter_value" id="selected_station_value">0</span>	
+
+			</div>
+
+	    	
+	    	<div id="content_left">
+		    	<span id="ups_inverter_label_title">입력 상태</span>
+		    	<span class="ups_inverter_label" id="Input_rst_volt_rms_name"> 전압 R/S/T</span>
+		    		<span class="ups_inverter_value" id="Input_rst_volt_rms_value">0.0V</span>
+		    	<span class="ups_inverter_label" id="Input_r_current_rms_name">전  류 </span>
+		    		<span class="ups_inverter_value" id="Input_r_current_rms_value">0.0/0.0/0.0A</span>
+		    	<span class="ups_inverter_label" id="Input_frequency_name">주 파 수 </span>
+		    		<span class="ups_inverter_value" id="Input_frequency_value">0Hz</span>
+			</div>
+	    	
+	    	<div id="content_right">
+		    	<span id="ups_inverter_label_title">바이패스상태</span>
+		    	<span  class="ups_inverter_label" id="Bypass_rst_volt_rms_name">전압 R/S/T</span>
+			    	<span  class="ups_inverter_value" id="Bypass_rst_volt_rms_value">0V</span>
+		    	<span class="ups_inverter_label" id="Bypass_rst_current_rms_name">전  류 </span>
+		    		<span class="ups_inverter_value" id="Bypass_rst_current_rms_value">0Hz</span>
+		    	<span class="ups_inverter_label" id="Bypass_Frequency_name">주 파 수 </span>
+		    		<span class="ups_inverter_value" id="Bypass_Frequency_value">0Hz</span>
+			</div>
+	    	<!--  다음 라인 인버터상태  및 출력 정보 -->
+	    	<div id="content_left">
+		    	<span id="ups_inverter_label_title">인버터상태</span>
+		    	<span class="ups_inverter_label" id="Inverter_uvw_volt_rms_name">전압 R/S/T</span>
+		    		<span class="ups_inverter_value" id="Inverter_uvw_volt_rms_value">0.0V</span>
+		    	<span class="ups_inverter_label" id="Inverter_uvw_curr_rms_name">-</span>
+		    		<span class="ups_inverter_value" id="Inverter_uvw_curr_rms_value">-</span>
+		    	<span class="ups_inverter_label" id="Inverter_Frequency_name">-</span>
+		    		<span class="ups_inverter_value" id="Inverter_Frequency_value">-</span>
+		    	<span class="ups_inverter_label" >-</span>
+		    		<span class="ups_inverter_value" >-</span>
+
+			</div>
+	    	
+	    	<div id="content_right">
+		    	<span id="ups_inverter_label_title">출력상태</span>
+		    	<span  class="ups_inverter_label" id="Output_rms_volt_rms_name">전압 R/S/T</span>
+			    	<span  class="ups_inverter_value" id="Output_rms_volt_rms_value">220V</span>
+		    	<span class="ups_inverter_label" id="Output_uvw_current_rms_name">전 류 </span>
+		    		<span class="ups_inverter_value" id="Output_uvw_current_rms_value">53A</span>
+		    	<span class="ups_inverter_label" id="Output_frequency_name">주 파 수</span>
+		    		<span class="ups_inverter_value" id="Output_frequency_value">60Hz</span>
+		    	<span class="ups_inverter_label" id="Output_RST_Load_name" >부 하율</span>
+		    		<span class="ups_inverter_value" id="Output_RST_Load_value">0/0/0%</span>
+	
+			</div>
+
+	    	<div id="content_left">
+		    	<span id="ups_inverter_label_title">축전지정보</span>
+		    	<span class="ups_inverter_label" id="Bat_volt_rms_value_name">축전지 전압</span>
+		    		<span class="ups_inverter_value" id=Bat_volt_rms_value>0.0V</span>
+		    	<span class="ups_inverter_label" id="Bat_current_rms_name">축전지 전류 </span>
+		    		<span class="ups_inverter_value" id="Bat_current_rms_value">0Hz</span>
+
+			</div>
+	    	<div id="content_right">
+		    	<span id="ups_inverter_label_title">-</span>
+		    	<span  class="ups_inverter_label" id="">-</span>
+			    	<span  class="ups_inverter_value" id="">-</span>
+		    	<span class="ups_inverter_label" id=""> </span>
+		    		<span class="ups_inverter_value" id="">-</span>
+	
+			</div>
+	    	<div id="message_status_div">
+	    		<span id="message_status_span">메세지 수신 완료</span>
+	    	</div>
+	    
+	    	
+	    	
+			<div>
+			
+	         <script>
+	         	///<dialog id="myDialog">This is an open dialog window</dialog>
+	         	//saveJsonData();
+	         	//저장되어 있는 정보를 읽어 들인다.
+	         	//readJsonData();
+	         	//var x = document.getElementById("myDialog");
+    			//x.open = true;
+	         </script>
+	         </div>
+	     </div>
+		
+		<div id="copntent_log">
+			<h2>UPS Log Data</h2>
+			<textarea class="loginputTextArea" id="text" placeholder="log data..."></textarea>
+		        <form id="text-options">
+		            <label>Filename: <input type="text" class="filename" id="text-filename" placeholder="a plain document"/>.txt</label>
+		            <input type="submit" value="로그데이타읽기"/>
+		        </form>
+
+		<p id="demo"></p>
+		</div>
+		    
+	    <section id="text-demo">
+	    </section>    
+
+        <div id="footer">
+        	<img id="iftechLogoImg" src="../img/iftechLogo.png" />
+       	 	<span id="company_info_name">(주)아이에프텍 </span>
+       		<span  id="company_info_webaddress">http://www.iftech.co.kr </span>
+        </div>
+		
+   </div>
+   
+	<!--  
+    <section id="html-demo">
+   <h2>UPS Log Data</h2>
+      <div class="input" id="html" contenteditable="">
+      	     <h3>Some example rich text</h3>
+      	     <ul>
+      	     	<li><del>Plain</del> <ins>Boring</ins> text.</li>
+      	     </ul>
+      </div>
+   
+   </section>
+	-->
+    
+   
+   <script src="../JavaScript/Blob.js"></script>
+   <script src="../JavaScript/FileSaver.js"></script>
+   <script src="../JavaScript/WebSocketClient.js"></script>
+   <script src="../JavaScript/SaveAsFile8.js"></script>
+   <script src="../JavaScript/json2.js"></script>
+   <script src="../JavaScript/upscanvasDraw.js"></script>
+	<script>
+	  //document.addEventListener("submit", function(event) {
+	  //document.addEventListener("click", function(event) {
+	  //text_options_form.addEventListener("click", function(event) {
+	  //	document.getElementById("demo").innerHTML = "Hello World";
+	  //}, false);
+	  
+	  //console.log(text_options_form);
+	</script>
+	  
+      
+   </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+<script >
+//$(document).ready(function(){
+	//$(".menu>a").mouseout(function(){
+		//var submenu = $(this).next("ul");
+		//submenu.slideUp();
+	//}
+//});
+var prev_submenu;
+$(document).ready(function(){
+        // menu 클래스 바로 하위에 있는 a 태그를 클릭했을때
+        //$(".menu>a").mouseout(function(){
+        //	var submenu = $(this).next("ul");
+        //	submenu.slideUp();
+        //});
+        $(".menu>a").click(function(){
+            
+            var submenu = $(this).next("ul");
+			if(prev_submenu !=  null ) prev_submenu.slideUp(); 	
+			prev_submenu = submenu;
+            // submenu 가 화면상에 보일때는 위로 보드랍게 접고 아니면 아래로 보드랍게 펼치기
+            if( submenu.is(":visible") ){
+                submenu.slideUp();
+            }else{
+                submenu.slideDown();
+            }
+        });
+    });
+    
+    
+</script>
+<title>Insert title here</title>
+<style>
+.menu .hide{display:none;}
+#cont1 {display:none;}
+
+#gnb li { list-style:none; }
+#gnb > li  { float:left; text-align:center; width:200px;  }  // 메뉴를 옆으로 배열한다.
+#gnb1 > li { list-style:none; float:left;  }  // 메뉴를 옆으로 배열한다.
+
+* { margin:0; padding:0; }
+li { list-style:none; }
+a { text-decoration:none; }
+img { border:none; }
+
+header { text-align:center;  top:0; left:0; background:#fff; width:100%; padding:20px 0; }
+
+header h1 { color:#006; }
+
+
+nav #gnb > li:last-child { margin-right:0; }
+nav #gnb > li a { display:block; height:40px; line-height:40px;  }
+nav #gnb > li > a:link, nav #gnb > li > a:visited { color:#333; font-weight:bold; font-size:18px; }
+nav #gnb > li > a:hover, nav #gnb > li > a:active, nav #gnb > li > a:focus, nav #gnb > li > a.select { background:#069; color:#fff; }
+nav #gnb ul li a:link, nav #gnb ul li a:visited { color:#666; } 
+nav #gnb ul li a:hover, nav #gnb ul li a:active, nav #gnb ul li a:focus { background:#eee; }
+
+section { text-align:center; height:500px; background:#ffc; }
+#cont1 { text-align:center; height:500px; background:#fcf; }
+#cont2 { text-align:center; height:500px; background:#ccf; }
+#cont3 { text-align:center; height:500px; background:#cff; }
+
+</style>
+
+<header><h1>UPS BATTERY MANAGEMENT SYTEM</h1></header>
+
+
+<nav>
+	<div>
+		<ul id=gnb>
+			<li class="menu">
+				<a>MENU1</a>
+				<ul id=gnb1 class="hide">
+					<li>
+						<a>submenu1</a>
+					</li>
+					<li>
+						<a>submenu2</a>
+					</li>
+				</ul>
+			</li>
+
+			<li class="menu">
+				<a>MENU2</a>
+				<ul id=gnb1 class="hide">
+					<li>
+						<a>submenu1</a>
+					</li>
+					<li>
+						<a>submenu2</a>
+					</li>
+					
+				</ul>
+			</li>
+
+			<li class="menu">
+			<a>MENU3</a>
+				<ul id=gnb1 class="hide">
+					<li>
+						<a>submenu1</a>
+					</li>
+					<li>
+						<a>submenu2</a>
+					</li>
+					
+				</ul>
+			</li>
+		</ul>
+	</div>
+</nav>
+</head>
+<body>
+
+<section >
+<article> <h1>제목</h1> <p>본문</p> </article>
+		<img src="file:///D	:\iftech.jpg"></img>
+	</section>
+
+<section id=cont1>
+<article> <h1>제목</h1> <p>본문</p> </article>
+</section>
+
+</body>
+</html>

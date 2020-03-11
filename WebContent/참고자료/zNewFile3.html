@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<meta charset=EUC-KR>
+<head>
+<script src=http://code.jquery.com/jquery-1.8.2.min.js>
+</script>  
+<script type=text/javascript>  
+/*
+		  
+		  
+	if (canvas.getContext) 
+	{		  
+		var ctx = canvas.getContext(2d);		  
+		ctx.fillStyle = rgb(200,0,0);		  
+		ctx.fillRect (10, 10, 50, 50);		  
+		ctx.fillStyle = rgba(0, 0, 200, 0.5);		  
+		ctx.fillRect (30, 30, 50, 50);	  
+	}  
+
+*/
+function draw() 
+{	
+	  	var canvas = document.getElementById("canvas");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+
+        ctx.fillStyle = "rgb(200,0,0)";
+        ctx.fillRect (10, 10, 50, 50);
+
+        ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+        ctx.fillRect (30, 30, 50, 50);
+      }  
+}  
+</script>
+</head>
+<title>도시철도공사 UPS Battery Monitor System</title>
+<BODY  onLoad="draw() " bgcolor="#FFFFFF" text="#2477E6">
+<canvas id=canvas width=150 height=150></canvas>
+Page Hits = 1<p><pre>Task          State  Priority  Stack	#<br>************************************************<br>
+WEB		R	2	181	8
+IDLE		R	0	222	5
+ETHINT		B	7	1999	7
+LEDx		B	1	230	1
+LEDx		B	1	199	3
+TCP/IP		B	7	1834	6
+LEDx		B	1	230	2
+DISPLAY		B	1	191	0
+
+</pre>
+
+</BODY></html>

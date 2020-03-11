@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/IndexMain.css"/>
+<link rel="stylesheet" type="text/css" href="../css/UpsSetup_Network.css"/>
+</head>
+
+<script src="../JavaScript/grobalVar.js"></script>
+<script src="../JavaScript/UpsSetup_Network.js"></script>
+
+<body id="MainBody" onLoad='onBodyLoadEventUpsSetup()'>
+
+<div id="all">
+
+	<div id ="head">
+	<img id="seoulMetroLogoImg" src="../img/seoulmetrologo.png" />
+	<h1>서울교통공사 UPS관리시스템</h1>
+	</div>
+
+
+
+	
+		<div hidden id ="menu">
+		     <P>Main Menu </P>
+
+				<ul>
+				<li> 개화산기술사업소(501~513)
+					<ul>
+						<li onClick="selectStation_UpsSetup('ST501')">방화기지</li>
+						<li onClick="selectStation_UpsSetup('ST502')">방화</li>
+						<li onClick="selectStation_UpsSetup('ST503')">개화산</li>
+						<li onClick="selectStation_UpsSetup('ST504')">김포공항</li>
+						<li onClick="selectStation_UpsSetup('ST505')">송정</li>
+						<li onClick="selectStation_UpsSetup('ST506')">마곡</li>
+						<li onClick="selectStation_UpsSetup('ST507')">발산</li>
+						<li onClick="selectStation_UpsSetup('ST508')">우장산</li>
+						<li onClick="selectStation_UpsSetup('ST509')">화곡</li>
+						<li onClick="selectStation_UpsSetup('ST510')">까치산</li>
+						<li onClick="selectStation_UpsSetup('ST511')">신정</li>
+						<li onClick="selectStation_UpsSetup('ST512')">목동</li>
+						<li onClick="selectStation_UpsSetup('ST513')">오목교</li>
+					</ul>
+				</li>
+				<li> 영등포기술사업소(514~527)
+					<ul>
+						<li onClick="selectStation_UpsSetup('ST514')">양평</li>
+						<li onClick="selectStation_UpsSetup('ST515')">영등포구청</li>
+						<li onClick="selectStation_UpsSetup('ST516')">영등포시장</li>
+						<li onClick="selectStation_UpsSetup('ST517')">신길</li>
+						<li onClick="selectStation_UpsSetup('ST518')">여의도</li>
+						<li onClick="selectStation_UpsSetup('ST519')">여의나루</li>
+						<li onClick="selectStation_UpsSetup('ST520')">마포</li>
+						<li onClick="selectStation_UpsSetup('ST521')">공덕</li>
+						<li onClick="selectStation_UpsSetup('ST522')">애오개</li>
+						<li onClick="selectStation_UpsSetup('ST523')">충정로</li>
+						<li onClick="selectStation_UpsSetup('ST524')">서대문</li>
+						<li onClick="selectStation_UpsSetup('ST525')">광화문</li>
+						<li onClick="selectStation_UpsSetup('ST526')">종로3가</li>
+						<li onClick="selectStation_UpsSetup('ST527')">을지로4가</li>
+					</ul>
+				</li>	
+				<li> 답십리기술사업소(528~39)
+					<ul>
+						<li onClick="selectStation_UpsSetup('ST528')">동대문역사문화공원</li>
+						<li onClick="selectStation_UpsSetup('ST529')">청구</li>
+						<li onClick="selectStation_UpsSetup('ST530')">신금호</li>
+						<li onClick="selectStation_UpsSetup('ST531')">행당</li>
+						<li onClick="selectStation_UpsSetup('ST532')">왕십리</li>
+						<li onClick="selectStation_UpsSetup('ST533')">마장</li>
+						<li onClick="selectStation_UpsSetup('ST534')">답십리</li>
+						<li onClick="selectStation_UpsSetup('ST535')">장한평</li>
+						<li onClick="selectStation_UpsSetup('ST536')">군자</li>
+						<li onClick="selectStation_UpsSetup('ST537')">아차산</li>
+						<li onClick="selectStation_UpsSetup('ST538')">광나루</li>
+						<li onClick="selectStation_UpsSetup('ST539')">천호</li>
+					</ul>
+				</li>	
+				<li> 고덕기술사업소(40~53)
+					<ul>
+						<li onClick="selectStation_UpsSetup('ST540')">강동</li>
+						<li onClick="selectStation_UpsSetup('ST541')">길동</li>
+						<li onClick="selectStation_UpsSetup('ST542')">굽은다리</li>
+						<li onClick="selectStation_UpsSetup('ST543')">명일</li>
+						<li onClick="selectStation_UpsSetup('ST544')">고덕</li>
+						<li onClick="selectStation_UpsSetup('ST545')">상일동</li>
+						<li onClick="selectStation_UpsSetup('ST546')">둔촌동</li>
+						<li onClick="selectStation_UpsSetup('ST547')">올림픽공원</li>
+						<li onClick="selectStation_UpsSetup('ST548')">방이</li>
+						<li onClick="selectStation_UpsSetup('ST549')">오금</li>
+						<li onClick="selectStation_UpsSetup('ST550')">개롱</li>
+						<li onClick="selectStation_UpsSetup('ST551')">거여</li>
+						<li onClick="selectStation_UpsSetup('ST552')">마천</li>
+						<li onClick="selectStation_UpsSetup('ST553')">고덕기지</li>
+					</ul>
+				</li>	
+			</ul>
+					     
+		<ul>
+				<li>UPS설정  
+					<ul>
+						<li onClick="moveUrl('SET_NETWORK')">네트웍설정</li>
+						<li onClick="moveUrl('SET_SNMP')">snmp설정</li>
+						<li onClick="moveUrl'SET_UPS')">ups설정</li>
+					</ul>
+				</li>						
+			</ul>
+		</div>
+		<!-- end menu div -->
+	
+	<div id="content_UpsSetup">
+	
+		<form action = "">
+		<fieldset id="SetNetWork_fieldset">
+			<legend id="network_Legend">UPS 장비 IP설정</legend>
+			<p>
+			<label>IP ADDRESS</label>
+			<input type = "text" id=ipaddress_input_text value="192.168.0.55"/><button type="button" onClick = "setNetwork_IpSetup()">설정</button>
+			</p>	
+			<p>
+			<label>GATE WAY</label>
+			<input type = "text"  id=gateway_input_text value="192.168.0.1"/><button type="button" onClick = "setNetwork_GatewaySetup()">설정</button>
+			</p>
+
+			<p>
+			<label>Subnet Mast</label>
+			<input type = "text"  id=subnetmask_input_text value="255.255.255.0"/><button type="button" onClick = "setNetwork_SubnetSetup()">설정</button>
+			</p>
+
+			<p>
+			<label>MAC ADDRESS</label>
+			<input type = "text"  id=macaddress_input_text value="50.56.64.55.53.0"/><button type="button" onClick = "setNetwork_MacaddressSetup()">설정</button>
+			</p>
+			 	
+			<p>
+			<label>WEB_PORT</label>
+			<input type = "text"  id=web_port_input_text value="17"/><button type="button" onClick = "setNetwork_webport()">설정</button>
+			</p>
+
+			<p>
+			<button type="button" onClick = "setNetwork_ofoff()">재기동</button>
+			</p>
+			
+			</fieldset>
+		</form>
+	
+	</div>
+	<!-- end content_UpsSetup div -->
+	
+	
+	
+	
+     <div id="footer">
+	   	<img id="iftechLogoImg" src="../img/iftechLogo.png" />
+  	 	<span id="company_info_name">(주)아이에프텍 </span>
+  		<span  id="company_info_webaddress">http://www.iftech.co.kr </span>
+   	  </div>
+</div>
+</body>
+</html>

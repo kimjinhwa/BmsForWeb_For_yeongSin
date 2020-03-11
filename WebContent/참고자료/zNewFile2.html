@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+  
+  </head>
+ <body onload=" draw(); ">
+   <canvas id="canvas" width="1200" height="1000"></canvas>
+  <script type="text/javascript">2
+  	var canvas = document.getElementById("canvas");
+  	var ctx = canvas.getContext("2d");
+   	var line_width=20;
+  	var start_x = 30;
+  	var start_y = 80;
+  	
+  	function draw_scr_left(x,y)
+  	{
+  		var scale =0.4;
+  		var hi=60*scale,wd=40*scale;
+  		ctx.beginPath();
+  		ctx.moveTo(x,y);
+        ctx.lineTo(x+wd,y+hi/2);
+        ctx.lineTo(x,y+hi);
+        ctx.lineTo(x,y);
+        ctx.moveTo(x+wd,y);
+        ctx.lineTo(x+wd,y+hi);
+        ctx.moveTo(x+wd,y+hi/2);
+        ctx.lineTo(x+wd*2,y+hi/2);
+        ctx.moveTo(x+wd,y+hi/2); 
+        ctx.lineTo(x+wd*2,y-hi/5);
+        ctx.moveTo(x,y+hi/2);
+        ctx.lineTo(x-hi/2,y+hi/2);
+        ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+        ctx.fill();
+        ctx.stroke();
+  		ctx.closePath();
+  	}
+	function draw_scr_right(x,y)
+  	{
+  		var scale =0.4;
+  		var hi=60*scale,wd=40*scale;
+  		ctx.beginPath();
+  		ctx.moveTo(x,y);
+        ctx.lineTo(x-wd,y+hi/2);
+        ctx.lineTo(x,y+hi);
+        ctx.lineTo(x,y);
+        ctx.moveTo(x-wd,y);
+        ctx.lineTo(x-wd,y+hi);
+        ctx.moveTo(x-wd,y+hi/2);
+        ctx.lineTo(x-wd*2,y+hi/2);
+        ctx.moveTo(x-wd,y+hi/2); 
+        ctx.lineTo(x-wd*2,y+hi/1);
+        ctx.moveTo(x,y+hi/2);
+        ctx.lineTo(x+hi/2,y+hi/2);
+        ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+        ctx.fill();
+        ctx.stroke();
+  		ctx.closePath();
+  	}
+  	function draw_scr(x,y,onoff)
+  	{
+  		//ctx.fillRect (x,y,100,100);
+  		draw_scr_left(x,y);
+  		draw_scr_right(x+20,y+30);
+
+  		ctx.beginPath();
+  		//ctx.strokeStyle = 'blue';
+  		//
+  		if(onoff == 1)
+  		{
+  			ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+  			//ctx.fill();
+  			ctx.fillRect(x-20,y+11,60,30);
+  		}
+  		else{ 
+  			ctx.strokeRect(x-20,y+11,60,30);
+  		}
+  		ctx.closePath();
+  	}
+  	
+  	function draw_sw_1(pos_x,pos_y,onoff) {
+        ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+        
+        if(onoff==1)
+        {
+        	pos_y +=25;	
+        	ctx.fillRect (pos_x, pos_y, 50, 20);
+        	ctx.fillRect (pos_x+15, pos_y+20, 20, 20);
+        	//draw_line_1_fill(110,1000);
+        	//draw_line_1_fill(pos_x + 35,80,800+50);
+        
+	        ctx.beginPath();
+	        var wdith=890;
+	        ctx.fillStyle = "rgb(0,0,0)";
+	        ctx.fillRect (start_x+60 + 35,  pos_y+20, wdith, 20);
+	        ctx.fillRect (start_x+60 + 35 + wdith, pos_y+20, 20, 200);
+	        ctx.closePath();
+        	
+        }
+        else
+        {
+   		//x =  start_x + 150;
+  		//y= 80;
+        	
+        	ctx.fillRect (pos_x, pos_y, 50, 20);
+        	ctx.fillRect (pos_x+15, pos_y+20, 20, 20);
+        	draw_line_1_empty(start_x+60 + 35,80,890);
+        }
+  	}
+  	function draw_sw_2(pos_x,pos_y,onoff) {
+        //ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+        
+        if(onoff==1)
+        {
+        	pos_y +=25;
+        	ctx.fillRect (pos_x, pos_y, 50, 20);
+        	ctx.fillRect (pos_x+15, pos_y+20, 20, 20);
+        	//draw_line_2_empty(110,1000);
+        	ctx.beginPath();
+        	ctx.fillStyle = "rgb(0,0,0)";
+        	ctx.fillRect(start_x + 100, start_y+100,580,20);
+        	ctx.closePath();
+        }
+        else
+        {
+        	
+        	ctx.fillRect (pos_x, pos_y, 50, 20);
+        	ctx.fillRect (pos_x+15, pos_y+20, 20, 20);
+        	//draw_line_2_empty(110,1000);
+	  		//x =  start_x + 150;
+	  		//y= 80+100;
+        	ctx.beginPath();
+        	ctx.fillStyle = "rgb(0,0,0)";
+        	ctx.strokeRect(start_x + 100, start_y+100,580,20);
+        	ctx.closePath();
+        	
+        	
+        }
+  	}
+  	function draw_sw_3(pos_x,pos_y,onoff) {
+        ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+        
+        if(onoff==1)
+        {
+        	pos_y +=25;	
+        	ctx.fillRect (pos_x, pos_y, 50, 20);
+        	ctx.fillRect (pos_x+15, pos_y+20, 20, 20);
+        	//draw_line_3_empty(110,1000);
+        	ctx.beginPath();
+        	ctx.fillStyle = "rgb(0,0,0)";
+        	//ctx.fillStyle = "rgb(255,255,255)";
+        	
+        	ctx.fillRect(start_x + 100, start_y+200,60,20);
+        	ctx.fill();
+        	ctx.closePath();
+        	
+        }
+        else
+        {
+        	
+        	ctx.fillRect (pos_x, pos_y, 50, 20);
+        	ctx.fillRect (pos_x+15, pos_y+20, 20, 20);
+        	//draw_line_2_empty(110,1000);
+        	ctx.beginPath();
+        	//ctx.fillStyle = "rgb(255,255,255)";
+        	//ctx.fill();
+        	ctx.strokeRect(start_x + 100, start_y+200,60,20);
+        	
+        	ctx.closePath();
+        	
+        }
+  	}
+  	function draw_sw_bat(x,y,w,onoff) {
+  		var scale =1;
+  		var h=w;//50;
+  		w=20;
+  		
+  		ctx.beginPath();
+  		//ctx.strokeRect(x,y,w,h);
+  		ctx.moveTo(x,y);
+  		ctx.lineTo(x=x+20,y);  
+  		ctx.lineTo(x,y=y+50);
+  		ctx.lineTo(x=x-20,y=y);
+  		ctx.lineTo(x=x,y=y-15);
+  		ctx.lineTo(x=x-20,y=y);
+  		ctx.lineTo(x=x,y=y-20);
+  		ctx.lineTo(x=x+20,y=y);
+  		ctx.lineTo(x=x,y=y-15);
+  		//ctx.lineTo(x=x-w/2+10,y);  
+  		//ctx.lineTo(x,y=y+h-20);
+  		//ctx.lineTo(x=x-20,y);
+  		//ctx.lineTo(x,y=y-h+20);
+  		//ctx.lineTo(x=x-w/2+10,y);
+  		//ctx.lineTo(x,y=y-20);
+  		//ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+  		ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+  		if(onoff==1){}
+  		else{}
+  		ctx.fill();
+
+        ctx.stroke();
+  		ctx.closePath();
+
+  	}
+   	function draw_sw_4(pos_x,pos_y,w,onoff) {
+        ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+        
+        if(onoff==1)
+        {
+        	pos_y +=25;	
+        	ctx.fillRect (pos_x, pos_y, 50, 20);
+        	ctx.fillRect (pos_x+15, pos_y+20, 20, 20);
+        	//draw_line_3_empty(110,1000);
+        	ctx.beginPath();
+        	ctx.fillStyle = "rgb(0,0,0)";
+        	//ctx.fillStyle = "rgb(255,255,255)";
+        	
+        	ctx.fillRect(pos_x+35 , pos_y+20,w,20);
+        	ctx.fill();
+        	ctx.closePath();
+        	
+        }
+        else
+        {
+        	
+        	ctx.fillRect (pos_x, pos_y, 50, 20);
+        	ctx.fillRect (pos_x+15, pos_y+20, 20, 20);
+        	//draw_line_2_empty(110,1000);
+        	ctx.beginPath();
+        	//ctx.fillStyle = "rgb(255,255,255)";
+        	//ctx.fill();
+        	ctx.strokeRect(pos_x+35 , pos_y+20+25,w,20);
+        	
+        	ctx.closePath();
+        	
+        }
+  	} 	
+  	function draw_line_3_empty(x,y) {
+  		x =  start_x + 150;
+  		y= 80+100+100;
+  		ctx.beginPath();
+  		ctx.strokeRect(x,y,600,20);
+  		ctx.closePath();
+  	}
+  	
+  	function draw_line_2_empty(x,y) {
+  		x =  start_x + 150;
+  		y= 80+100;
+  		ctx.beginPath();
+  		ctx.strokeRect(x,y,600,20);
+  		ctx.closePath();
+  	}
+  	
+  	function draw_line_1_empty(x,y,w) {
+        ctx.beginPath();
+        ctx.moveTo(x,y);
+        ctx.lineTo(x=x+w,y);
+        ctx.lineTo(x,y=y+200);
+        ctx.lineTo(x=x-20,y);
+        ctx.lineTo(x,y=y-180);
+        ctx.lineTo(x=x-w+20,y);
+        ctx.lineTo(x,y=y-20);
+        ctx.stroke();
+        ctx.closePath();
+  	}
+  	function draw_line_1_fill(x,y,width) {
+  		//x =  start_x + 100;
+  		//y = 80;
+  		
+        ctx.beginPath();
+        ctx.fillStyle = "rgb(0,0,0)";
+        //ctx.fillRect (110+50,  80, 890-50, 20);
+        ctx.fillRect (x,  y, x+680, 20);
+        //ctx.fillRect (980, 80, 20, 200);
+        ctx.fillRect (x+800+20, 80, 20, 200);
+        ctx.closePath();
+        /*
+        ctx.moveTo(x,y);
+        ctx.lineTo(x=1000,y);
+        ctx.lineTo(x,y+200);
+        ctx.lineTo(x= x-20,y=y+200);
+        ctx.lineTo(x,y=y-180);
+        ctx.lineTo(x=x-870,y);
+        ctx.lineTo(x,y-20);
+        ctx.stroke();
+        */
+  	}
+  	
+  	function draw_start_line() {
+		var width;
+		width=80;
+		ctx.beginPath();
+        ctx.fillStyle = "rgb(0,0,0)";
+        ctx.fillRect (0, start_y+200,width , line_width);
+        ctx.fillRect (start_x, start_y,width , line_width);
+        ctx.fillRect (start_x, start_y,line_width , 200);
+        ctx.fillRect (start_x, start_y+100,width , line_width);
+        ctx.fillRect (start_x, start_y+200,width , line_width);
+        ctx.closePath();
+  	}
+  	function draw_scr_1(x,y,onoff)
+  	{
+  		draw_scr(x,y,onoff);
+  		if(onoff==1)
+  		{
+        	//ctx.beginPath();
+        	//ctx.fillStyle = "rgb(0,0,0)";
+        	//ctx.strokeRect(x=x+40, y=start_y+100,50,20);
+        	//ctx.strokeRect(x+50-20,y,20,100);
+        	//ctx.closePath();
+        	ctx.beginPath();
+        	//ctx.fillStyle = "rgb(0,0,0)";
+	  		ctx.moveTo(x=x+40,y=start_y+100);
+	        ctx.lineTo(x=x+50,y);
+	        ctx.lineTo(x,y+=100);
+	        ctx.lineTo(x-=20,y);
+	        ctx.lineTo(x,y-=80);
+	        ctx.lineTo(x-=30,y);
+	        ctx.lineTo(x,y-=20);
+	        ctx.fillStyle = "rgb(0,0,0)";
+	        ctx.fill();
+	        ctx.stroke();
+        	ctx.closePath();
+
+  		}
+  		else
+  		{
+        	ctx.beginPath();
+        	//ctx.fillStyle = "rgb(0,0,0)";
+	  		ctx.moveTo(x=x+40,y=start_y+100);
+	        ctx.lineTo(x=x+50,y);
+	        ctx.lineTo(x,y+=100);
+	        ctx.lineTo(x-=20,y);
+	        ctx.lineTo(x,y-=80);
+	        ctx.lineTo(x-=30,y);
+	        ctx.lineTo(x,y-=20);
+	        ctx.fillStyle = "rgb(255,255,255)";
+	        ctx.fill();
+	        ctx.stroke();
+        	ctx.closePath();
+  			
+  		}
+  		
+  	}
+  	function draw_scr_2(x,y,onoff)
+  	{
+  		draw_scr(x,y,onoff);
+  		if(onoff==1)
+  		{
+  		/*
+        	ctx.beginPath();
+	  		ctx.moveTo(x=x+40,y=start_y+100);
+	        ctx.lineTo(x=x+50,y);
+	        ctx.lineTo(x,y+=100);
+	        ctx.lineTo(x-=20,y);
+	        ctx.lineTo(x,y-=80);
+	        ctx.lineTo(x-=30,y);
+	        ctx.lineTo(x,y-=20);
+	        ctx.fillStyle = "rgb(0,0,0)";
+	        ctx.fill();
+	        ctx.stroke();
+        	ctx.closePath();
+        	*/
+
+  		}
+  		else
+  		{
+  		/*
+        	ctx.beginPath();
+	  		ctx.moveTo(x=x+40,y=start_y+100);
+	        ctx.lineTo(x=x+50,y);
+	        ctx.lineTo(x,y+=100);
+	        ctx.lineTo(x-=20,y);
+	        ctx.lineTo(x,y-=80);
+	        ctx.lineTo(x-=30,y);
+	        ctx.lineTo(x,y-=20);
+	        ctx.fillStyle = "rgb(255,255,255)";
+	        ctx.fill();
+	        ctx.stroke();
+        	ctx.closePath();
+        	*/
+  			
+  		}
+  		
+  	}  	
+  	function draw_ractifier(x,y,onoff,reverse)
+  	{
+  		ctx.beginPath();
+  		ctx.fillStyle = "rgb(0,255,000)";
+  		var w=80,h=60;
+  		ctx.strokeRect(x,y,w,h);
+  		ctx.fillRect(x,y,w,h);
+  		ctx.moveTo(x+w,y);
+  		ctx.lineTo(x,y+h);
+  		ctx.fill();
+  		//ctx.fillRect(x,y,80,60);
+  		ctx.stroke();
+		ctx.fillStyle = "rgb(0,0,000)";
+  		ctx.font="50px Arial";
+  		if(reverse==0)
+  		{
+	  		ctx.fillText("~",x+10,y+h/2+10);
+			ctx.fillText("_",x+45,y+h/2+5);
+		}
+		else
+		{
+	  		ctx.fillText("_",x+10,y+h/2-15);
+			ctx.fillText("~",x+45,y+h/2+25);
+		}
+  		ctx.closePath();
+  	}
+  	function draw_line_4(x,y,w,onoff)
+  	{
+  		ctx.beginPath();
+  		ctx.moveTo(x,y);
+  		ctx.lineTo(x=x+w,y);
+  		ctx.lineTo(x,y=y+20);
+  		ctx.lineTo(x=x-w,y);
+  		ctx.lineTo(x,y);
+  		ctx.fillStyle = "rgb(0, 0, 0)"
+  		if(onoff==1)
+  			ctx.fill();
+  		ctx.stroke();
+  		ctx.closePath();
+  	}
+  	function draw_t(x,y,w,h) {
+  		var scale =1;
+  		h=h*scale;
+  		w=w*scale;
+  		ctx.beginPath();
+  		//ctx.strokeRect(x,y,w,h);
+  		ctx.moveTo(x,y);
+  		ctx.lineTo(x=x+w,y);  
+  		ctx.lineTo(x,y=y+20);
+  		
+  		ctx.lineTo(x=x-w/2+10,y);  
+  		ctx.lineTo(x,y=y+h-20);
+  		ctx.lineTo(x=x-20,y);
+  		ctx.lineTo(x,y=y-h+20);
+  		ctx.lineTo(x=x-w/2+10,y);
+  		ctx.lineTo(x,y=y-20);
+  		//ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+  		ctx.fillStyle = "rgb(0, 0, 0)";
+  		//ctx.fillStyle = "rgb(255, 255, 255)";
+  		ctx.fill();
+
+        ctx.stroke();
+  		ctx.closePath();
+  	
+  	}
+  	
+  	function draw_bat(x,y)
+  	{
+        //ctx.fillStyle = "rgb(0, 255, 0)";
+        //ctx.fillRect(440,370,20,50);
+        //ctx.fillRect(x,y,20,50);
+        //ctx.fillStyle = "rgb(200, 200, 200)";
+        //ctx.fillRect(x-60,y+50,150,80);
+        
+  		ctx.beginPath();
+  		ctx.moveTo(x,y);
+  		ctx.lineTo(x=x+100,y);
+  		ctx.lineTo(x,y=y+20);
+  		ctx.lineTo(x=x-100,y);
+  		ctx.lineTo(x,y);
+  		ctx.fillStyle = "rgb(0, 0, 0)"
+  		ctx.stroke();
+  		ctx.closePath();
+  	
+  	}
+  	
+    function draw() {
+		draw_start_line();
+		draw_sw_1(95,35,0);  // switch off
+        draw_sw_2(95,35+100,1);  // switch off
+        draw_sw_3(95,35+100+100,1);  // switch off
+        draw_sw_4(95+35+45,35+100+100,60,1);  // x만 60떨어져 있다
+        draw_ractifier(270,260,1,0)
+        draw_t(350,280,200,70);
+        draw_ractifier(530,260,1,1);
+        draw_line_4(610,280,100,1);
+        
+        draw_scr_1(730,163,1);
+        //draw_scr_2(730,263,1);draw_line_4(770,280,100,1);
+        draw_scr_2(730,263,0);draw_line_4(770,280,30,0);draw_line_4(800,280,70,1);
+        
+        draw_sw_4(855,235,150,1);  // x만 60떨어져 있다
+        //draw_scr_2(730,263,0);draw_line_4(800,280,70,1);
+        //draw_sw_2(75+50,35+200,1);  // switch off
+        draw_sw_bat(460,335,1);
+        
+        draw_bat(440,370);
+      if (canvas.getContext) {      }
+      
+    }
+     //setTimeout("location.reload()",1000)
+  </script>
+  가나다.
+ </body>
+</html>

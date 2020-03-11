@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <style>
+ canvas { background: #eee; display: block; margin: 0 auto; }
+ </style>
+  <meta charset="utf-8"/>
+ </head>
+ <body onload=" draw(); ">
+   <canvas id="canvas" width="1200" height="500" ></canvas>
+  <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript">
+  
+  	var canvas = document.getElementById("canvas");;
+    var ctx = canvas.getContext("2d");;
+    var gx  = canvas.width/2;
+   
+	var gy = canvas.height-30;
+	var dx = 2;
+	var dy = -2;
+	
+   function drawBall() {
+
+    ctx.font="30px Arial";
+	ctx.fillText("gx = "+gy,10,50);
+   
+    ctx.beginPath();
+    ctx.arc(gx, gy, 10, 0, Math.PI*2);
+    ctx.fillStyle = "#0095DD";
+    ctx.fill();
+    ctx.closePath();
+	}
+	 
+    function draw() {
+    
+      //canvas = document.getElementById("canvas");    
+
+      if (canvas.getContext) {
+      	
+        //ctx = canvas.getContext("2d");
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawBall();
+        gx += dx;
+    	gy += dy;
+		//var x,y,w,h;
+		/*
+		x=10;y=80;w=80;h=20;
+		
+		ctx.beginPath();
+        ctx.fillStyle = "rgb(0,0,0)";
+        ctx.fillRect (x, y, w, h);
+        x = x + w + 20;
+        w = 1000;
+        //ctx.fillStyle = "rgb(0,0,0)";
+		//ctx.fillRect (x, y, w, h);
+		//ctx.rect(x,y,w,h);
+		//ctx.stroke();
+		
+        ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+        ctx.fillRect (75, 30, 50, 20);
+        ctx.fillRect (90, 50, 20, 20);
+        
+        //ctx.closePath();
+        
+        ctx.beginPath();
+        ctx.fillStyle = "blue";
+        ctx.moveTo(x,y);
+        ctx.lineTo(x=1000,y);
+        ctx.lineTo(x,y+200);
+        ctx.lineTo(x= x-20,y=y+200);
+        ctx.lineTo(x,y=y-180);
+        ctx.lineTo(x=x-870,y);
+        ctx.lineTo(x,y-20);
+        
+        ctx.stroke();
+        
+        ctx.closePath();
+        */
+      }
+      
+    }
+    //setInterval(draw, 10);
+    setInterval(function(){ draw(); }, 10);
+     //setTimeout("location.reload()",1000)
+  </script>
+
+ </body>
+</html>
