@@ -1,6 +1,4 @@
-﻿		//"ST501" : 	{			"ipaddress":"10.45.61.210",			"gateway":"10.45.61.254",			"subnetmask":"255.255.255.0"		,"port":"80"	,"macAddress":"80.86.100.85.86.1"},
-		//"ST501" : 	{			"ipaddress":"192.168.0.55",			"gateway":"192.168.0.1",			"subnetmask":"255.255.255.0"		,"port":"80"	,"macAddress":"80.86.100.85.86.1"},
-var UpsNetworkInfo = {
+﻿var UpsNetworkInfo = {
 		"ST501" : 	{			"ipaddress":"10.45.61.210",			"gateway":"10.45.61.254",			"subnetmask":"255.255.255.0"		,"port":"80"	,"macAddress":"80.86.100.85.86.1"},
 		"ST502" : 	{			"ipaddress":"192.168.0.57",			"gateway":"10.45.10.254",			"subnetmask":"255.255.255.0"		,"port":"80"	,"macAddress":"80.86.100.85.86.2"},
 		"ST503" : 	{			"ipaddress":"10.45.11.210",			"gateway":"10.45.11.254",			"subnetmask":"255.255.255.0"		,"port":"80"	,"macAddress":"80.86.100.85.86.3"},

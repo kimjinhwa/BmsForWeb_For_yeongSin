@@ -1299,6 +1299,7 @@ function *getWinsockResponse(connect_str , command_data )  // 'UPS_DATA' 로그�
 	
 		received_msg = "";
 		connect_str ='ws://'+ upsNetworkInfo_local[networkList_receiveList[selected_group][i]].ipaddress+':80/echo' ;
+		selected_station = networkList_receiveList[selected_group][i] ;  // selected_station 는 저장 할 때 사용한다.
 		retry_count = 0;
 		for(retry_count ;retry_count < 1; retry_count++)
 		{
@@ -1340,7 +1341,6 @@ function *getWinsockResponse(connect_str , command_data )  // 'UPS_DATA' 로그�
 			}
 
 			yield;
-			//else alert("retry_count " +retry_count);
 		}
 		if(received_msg.length < 10 ) 
 		{
@@ -1359,25 +1359,17 @@ function *getWinsockResponse(connect_str , command_data )  // 'UPS_DATA' 로그�
 		{
 			(document.getElementById("message_status_div")).style.backgroundColor=  "#00ff00";
 			(document.getElementById("message_status_span")).innerHTML=networkList_receiveList[selected_group][i] + " 메세지 수신 완료 ";
-			
-			console.log("Good receive msg : " + received_msg );
-			//if(ups_data_count > 2)
-			selected_station = networkList_receiveList[selected_group][i] ;  // selected_station 는 저장 할 때 사용한다.
 			parse_ups_data(received_msg);
-			
 		}
 		else
 		{
-			//(document.getElementById("message_status_span")).background-color = #00ff00;
 			(document.getElementById("message_status_div")).style.backgroundColor=  "#ff0000";
 			(document.getElementById("message_status_span")).innerHTML=networkList_receiveList[selected_group][i] + " 메세지 수신 실퍠 ";	
 		}
-		//local_station  = StationAndUpsInfo[selected_station];
 		yield;
 		i++;
 		if( i >= networkList_receiveList[selected_group].length ) i = 0;
-	//#message_status_div
-	}  // end for
+	}
 }
 
 function *setIpAddressProcedure()

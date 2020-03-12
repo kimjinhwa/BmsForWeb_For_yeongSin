@@ -138,7 +138,6 @@ var log_Inverter_Operation_Fault ={
 
 var data_select_from_menu=false;
 
-//setInterval(selectStation_1,2000 );
 var interval_value ;
 
 function getSelectGroup()
@@ -147,12 +146,10 @@ function getSelectGroup()
 	for (i = 0; i < weapon.length; i++){
 		currentWeapon = weapon[i];
 		if (currentWeapon.checked){
-			//var selectedWeapon = currentWeapon.value;
 			return i;
-			//console.log(selected_group);
 			
-		} // end if
-	} // end for
+		} 
+	} 
 
 }
 function selectRadioBox()
@@ -162,13 +159,11 @@ function selectRadioBox()
 	for (i = 0; i < weapon.length; i++){
 		currentWeapon = weapon[i];
 		if (currentWeapon.checked){
-			//var selectedWeapon = currentWeapon.value;
 			selected_group = i;
 			onBodyLoadEvent();
-			//console.log(selected_group);
 			
-		} // end if
-	} // end for
+		} 
+	} 
 }
 
 function autoQuery()
@@ -180,7 +175,6 @@ function autoQuery()
 		(document.getElementById("start_button")).value = '자동검색중';
 		(document.getElementById("start_button")).value.blink();
         (document.getElementById("start_button")).style.backgroundColor=  "#00ff00";
-		//interval_value = setInterval(selectStation_1,2000 );
         stop_auto_query = false;
 		myfunction();
 	}
@@ -191,7 +185,6 @@ function autoQuery()
 		(document.getElementById("start_button")).style.backgroundColor=  "#dbfff4";
 		clearInterval(interval_value);
 	}
-	//
 }
 
 
@@ -211,9 +204,6 @@ function autoQuery()
 function change_image_status(normal)
 {
 		var str_id ="stationImg_"+ selected_station;
-		//console.log("selected_station="+selected_station);
-		//console.log(str_id);
-		//if( StationAndUpsInfo[selected_station].Converter_Operation_Fault & 0x3BDE )
 		if(!normal)
 		{
 																	   
@@ -229,14 +219,11 @@ function change_image_status(normal)
 
 function change_image_status_all()
 {
-	// id=stationImg_
-	//document.getElementById("imageid").src="../template/save.png";
 	for(var i=0; i< networkList_receiveList[selected_group].length; i++)
 	{
 		
 
 		var str_id ="stationImg_"+ StationAndUpsInfo[networkList_receiveList[selected_group][i]].station_code;
-		//console.log(str_id);
 		if( StationAndUpsInfo[networkList_receiveList[selected_group][i]].Converter_Operation_Fault & 0x3BDE )
 		{
 			document.getElementById(str_id).src="../img/trainHead_fault.png";
@@ -266,14 +253,8 @@ function selectStation(station)
 	(document.getElementById("main_title")).innerHTML="서울교통공사 UPS관리시스템(" + local_station.station_name + ")";
 	console.log("local_station.station_name:"+ selected_station);
 	console.log("local_station.station_name:"+ local_station.station_name);
-	//console.log("local_station.station_name:"+ StationAndUpsInfo[station].station_name);
-	//UpsNetworkInfo
 	var connect_str ='ws://'+ upsNetworkInfo_local[station].ipaddress+':80/echo' ;
-	//var connect_str ='ws://'+ UpsNetworkInfo[station].ipaddress+':80/echo' ;
-	
-	//webSocket('ws://192.168.0.55:80/echo','UPS_DATA');
 	clearDataField_toWeb();
-	//webSocket(connect_str,'UPS_DATA');
 	data_select_from_menu = true;
 	getWinsockUpsDatafunction(connect_str,'UPS_DATA');
 }
@@ -1299,6 +1280,7 @@ function *getWinsockResponse(connect_str , command_data )  // 'UPS_DATA' 로그�
 	
 		received_msg = "";
 		connect_str ='ws://'+ upsNetworkInfo_local[networkList_receiveList[selected_group][i]].ipaddress+':80/echo' ;
+		selected_station = networkList_receiveList[selected_group][i] ;  // selected_station 는 저장 할 때 사용한다.
 		retry_count = 0;
 		for(retry_count ;retry_count < 1; retry_count++)
 		{
@@ -1340,7 +1322,6 @@ function *getWinsockResponse(connect_str , command_data )  // 'UPS_DATA' 로그�
 			}
 
 			yield;
-			//else alert("retry_count " +retry_count);
 		}
 		if(received_msg.length < 10 ) 
 		{
@@ -1359,25 +1340,17 @@ function *getWinsockResponse(connect_str , command_data )  // 'UPS_DATA' 로그�
 		{
 			(document.getElementById("message_status_div")).style.backgroundColor=  "#00ff00";
 			(document.getElementById("message_status_span")).innerHTML=networkList_receiveList[selected_group][i] + " 메세지 수신 완료 ";
-			
-			console.log("Good receive msg : " + received_msg );
-			//if(ups_data_count > 2)
-			selected_station = networkList_receiveList[selected_group][i] ;  // selected_station 는 저장 할 때 사용한다.
 			parse_ups_data(received_msg);
-			
 		}
 		else
 		{
-			//(document.getElementById("message_status_span")).background-color = #00ff00;
 			(document.getElementById("message_status_div")).style.backgroundColor=  "#ff0000";
 			(document.getElementById("message_status_span")).innerHTML=networkList_receiveList[selected_group][i] + " 메세지 수신 실퍠 ";	
 		}
-		//local_station  = StationAndUpsInfo[selected_station];
 		yield;
 		i++;
 		if( i >= networkList_receiveList[selected_group].length ) i = 0;
-	//#message_status_div
-	}  // end for
+	}
 }
 
 function *setIpAddressProcedure()
